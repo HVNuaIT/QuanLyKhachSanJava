@@ -51,12 +51,24 @@ public class KhachSanTestDrive {
 			break;
 				
 			case 6 : 
+				nhap.nextLine() ; 
+				System.out.println("Nhap cm");
+				String cM = nhap.nextLine();
+				if (dsKhach.timKiemKH(cM)== true) {
+					System.out.println("Tien Phong " + dsPhong.thanhToan());
+					System.out.println("Tien Dich Vu : " + dsDichVu.thanhTien());
+					double tong = dsPhong.thanhToan()+dsDichVu.thanhTien();
+					
+				System.out.println("Tong Tien " + tong);
+				}
 				
-				break ;
-			
+				
+				
+				
+			break ;
 			}
 			
-			nhap.nextLine();
+		
 		}catch (Exception e) {
 			System.err.println("LOI ");
 			nhap.nextLine();

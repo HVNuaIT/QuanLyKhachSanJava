@@ -55,8 +55,9 @@ double thanhToan () {
 		}else {
 			 thanhTien = x.getGiaPhong() ; 
 		}
-		System.out.println("Tien Phong : " + thanhTien);
+		x.setTinhTrangPhong("Trong");
 	}
+	
 	return thanhTien;
 }
 void timPhongtrong ( ) {

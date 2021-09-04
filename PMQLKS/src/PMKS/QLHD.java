@@ -30,17 +30,14 @@ public class QLHD {
 			System.out.println(x.toString());
 		}
 	}
+	//XOA DANH SACH HOA DON 
 	void xoaHD (String maHD) {
 for (HoaDon x : dsHoaDon) {
 	if (x .getMaHoaDon().equalsIgnoreCase(maHD)) {
 		dsHoaDon.remove(maHD);
 	}}
 }
-	double thanhTien (String cM) {
 	
-	
-		return 0 ; 
-	}
 
 	void timHD (String maHD ) {
 		for(HoaDon x : dsHoaDon) {
@@ -89,11 +86,11 @@ for (HoaDon x : dsHoaDon) {
 	}
 	static void menu() {
 		System.out.println("-----MenuHD----");
-		System.out.println("1.Them Hoa Don");
-		System.out.println("2.In Hoa Don ");
-		System.out.println("3.Xoa Hoa Don ");
+		System.out.println("1.Them Hoa Don    ");
+		System.out.println("2.In Hoa Don      ");
+		System.out.println("3.Xoa Hoa Don     ");
 		System.out.println("4.Tim Kiem Hoa Don");
-		System.out.println("5.Thoat GD HD");
+		System.out.println("5.Thoat GD HD     ");
 		
 	}
 }

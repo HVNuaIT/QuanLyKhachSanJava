@@ -107,5 +107,15 @@ public class QLKH {
 			
 		} while (chon <5);
 	}
+	boolean timKiemKH(String cM) {
+		for(Nguoi x : dsNguoi) {
+			if (x instanceof KhachHang) {
+				KhachHang khach = (KhachHang )x;
+				if (khach.getChungMT().equalsIgnoreCase(cM)) {
+					return true ;
+				}
+				}
+		}return false;
+	}
 	}
 

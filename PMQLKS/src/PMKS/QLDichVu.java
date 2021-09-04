@@ -89,7 +89,6 @@ double thanhTien () {
 	double thanhTien = 0 ; 
 	for (DichVu x : dsDichVu) {
 		 thanhTien = x.getGiaDV();
-		System.out.println("Tien dich Vu" + thanhTien);
 	}
 	return thanhTien;
 }
