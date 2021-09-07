@@ -4,10 +4,7 @@ public class Phong {
 	private String maPhong ; 
 	private String loaiPhong ; 
 	private double giaPhong ;
-	private String tinhTrangPhong;
-
-	
-	
+	private boolean tinhTrangPhong;
 	
 	public String getMaPhong() {
 		return maPhong;
@@ -33,15 +30,15 @@ public class Phong {
 		this.giaPhong = giaPhong;
 	}
 	
-	
 
 
-public String getTinhTrangPhong() {
+public boolean isTinhTrangPhong() {
 		return tinhTrangPhong;
 	}
 
-	public void setTinhTrangPhong(String tinhTrangPhong) {
+	public void setTinhTrangPhong(boolean tinhTrangPhong) {
 		this.tinhTrangPhong = tinhTrangPhong;
+		
 	}
 
 Phong (){
@@ -51,7 +48,7 @@ Phong (String maPhong){
 	this.maPhong = maPhong;
 }
 
-public Phong(String maPhong, String loaiPhong, double giaPhong, String  tinhTrangPhong) {
+public Phong(String maPhong, String loaiPhong, double giaPhong, boolean tinhTrangPhong) {
 	super();
 	this.maPhong = maPhong;
 	this.loaiPhong = loaiPhong;
@@ -59,6 +56,9 @@ public Phong(String maPhong, String loaiPhong, double giaPhong, String  tinhTran
 	this.tinhTrangPhong = tinhTrangPhong;
 
 	
+}
+Phong ( String ma,double gia){
+	this.giaPhong = gia;
 }
 
 @Override

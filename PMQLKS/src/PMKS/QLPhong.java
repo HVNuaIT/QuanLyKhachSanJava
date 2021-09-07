@@ -2,6 +2,7 @@ package PMKS;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -21,7 +22,7 @@ void themPhong ( ) {
 	double giaPhong  = nhap.nextDouble() ; 
 	nhap.nextLine();
 	 System.out.println("Nhap Tinh Trang : ");
-	 String tinhTrang = nhap.nextLine();
+	 boolean tinhTrang = nhap.nextBoolean();
 	 phong  = new Phong(maPhong, loaiPhong, giaPhong, tinhTrang);
 	 dsPhong.add(phong);
 }
@@ -46,6 +47,7 @@ void xoaPhong (String maPhong ) {
 		}
 	}
 }
+
 double thanhToan () {
 	double thanhTien =  0;
 	for (Phong x : dsPhong) {
@@ -55,20 +57,31 @@ double thanhToan () {
 		}else {
 			 thanhTien = x.getGiaPhong() ; 
 		}
-		x.setTinhTrangPhong("Trong");
 	}
-	
 	return thanhTien;
 }
-void timPhongtrong ( ) {
-	for (Phong x:dsPhong ) {
-		if (x.getTinhTrangPhong().equalsIgnoreCase("Trong")) {
+boolean timPhongtrong (String maPhong  ) {
+	
+	for (Phong x : dsPhong) {
+		if (x.getMaPhong().equalsIgnoreCase(maPhong)) {
 			System.out.println(x.toString());
-		x.setTinhTrangPhong("Day");
-		
-		}
+			x.setTinhTrangPhong(false);
+		}}
+	return false;
 	}
+boolean tinhTrangPhong (String maPhong) {
+		for (Phong x : dsPhong) {
+			if (x.getMaPhong().equalsIgnoreCase(maPhong)) {
+				System.out.println(x.toString());
+				x.setTinhTrangPhong(true);
+				
+			}
+		}
+	return false;
 }
+
+
+
 
 static void menu () {
 	System.out.println("-------MeNu QL Phong----------");
@@ -77,6 +90,7 @@ static void menu () {
 	System.out.println("3. Xoa Phong ");
 	System.out.println("4. Tim Phong Theo ma");
 	System.out.println("5 . Thoat GD QL Phong ");
+	
 }
 void hienthiQLPhong () {
 	int chon  = 0 ; 
@@ -89,7 +103,6 @@ void hienthiQLPhong () {
 			nhap.nextLine();
 			themPhong();
 			break;
-
 		case 2 :
 			inDSPhong();
 			break;

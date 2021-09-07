@@ -27,6 +27,7 @@ public class QLKH {
 			String soChungMinh = nhap.nextLine();
 			System.out.println("Nhap So Dien Thoai : ");
 			String soDT = nhap.nextLine();
+			
 			nguoi  = new KhachHang(ten, gioiTinh, quocTich, tuoi, maKhach, soChungMinh, soDT);
 		dsNguoi.add(nguoi);	
 	}
@@ -107,15 +108,29 @@ public class QLKH {
 			
 		} while (chon <5);
 	}
-	boolean timKiemKH(String cM) {
+	boolean timKiemKH(String ma) {
 		for(Nguoi x : dsNguoi) {
 			if (x instanceof KhachHang) {
 				KhachHang khach = (KhachHang )x;
-				if (khach.getChungMT().equalsIgnoreCase(cM)) {
+				if (khach.getMaKhachHang().equalsIgnoreCase(ma)) {
+					System.out.println(x.toString());
+					dsNguoi.remove(khach);
 					return true ;
-				}
+									}
 				}
 		}return false;
+	}
+	void timkiem(String cM) {
+		for (Nguoi x : dsNguoi) {
+			if (x instanceof KhachHang) {
+				KhachHang khach = (KhachHang )x ; 
+				if (khach.getChungMT().equalsIgnoreCase(cM)) {
+					System.out.println(x.toString());
+					
+				
+				}
+			}
+		}
 	}
 	}
 

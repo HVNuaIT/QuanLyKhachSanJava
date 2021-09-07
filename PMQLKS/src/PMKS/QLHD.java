@@ -17,12 +17,25 @@ public class QLHD {
 		String maPhieuDat =nhap.nextLine();
 		System.out.println("Nhap ngay Thanh Toan: ");
 		String ngayTT = nhap.nextLine();
-		System.out.println("ma nhan Vien");
-		String maNhv = nhap.nextLine();
-		System.out.println("Nhap Gia tien");
-		double gia = nhap.nextDouble();
-		hoaDon = new HoaDon(maPhieuDat, maHD, ngayTT, maNhv, gia);
-		
+		System.out.println("Nhap ma Khach : ");
+		String maKhach = nhap.nextLine();
+		System.out.println("Nhap C M N D ");
+		String cm = nhap.nextLine();
+		System.out.println("Nhap ma Dich vu : ");
+		String maDV = nhap.nextLine();
+		System.out.println("Nhap ma Phong ");
+		String maPhong = nhap.nextLine();
+		System.out.println("Nhap gia Dat Phong ");
+		double giaPhong = nhap.nextDouble() ; 
+		System.out.println("Nhap Gia Dich Vu");
+		double giaDV  = nhap.nextDouble();
+		double gia = giaDV + giaPhong ;
+		nhap.nextLine();
+	DatPhong datPhong = new DatPhong(maPhieuDat);
+	DichVu dichVu  = new DichVu(maPhong, giaDV);
+	Phong phong = new Phong(maPhong, gia);
+	KhachHang khach  = new KhachHang(maKhach, cm);
+	hoaDon = new HoaDon(maHD, ngayTT, gia, datPhong, dichVu, phong, khach);
 	 dsHoaDon.add(hoaDon);  
 	}
 	void inDSHoaDon() {
@@ -37,8 +50,6 @@ for (HoaDon x : dsHoaDon) {
 		dsHoaDon.remove(maHD);
 	}}
 }
-	
-
 	void timHD (String maHD ) {
 		for(HoaDon x : dsHoaDon) {
 			if (x.getMaHoaDon().equalsIgnoreCase(maHD)) {
@@ -56,6 +67,7 @@ for (HoaDon x : dsHoaDon) {
 			case 1:
 				nhap.nextLine();
 				themHD();
+				
 				break;
 
 			case 2 :
@@ -74,7 +86,17 @@ for (HoaDon x : dsHoaDon) {
 				timHD(maHoaDon);
 				break ; 
 			case 5 : 
-				System.out.println("Da Thoat GD HD");
+				nhap.nextLine();
+				System.out.println("Tra Phong" ) ; 
+				System.out.println ("\nNhap cm ") ; 
+				String cm =nhap.nextLine();
+				thanhToan(cm);
+			
+			break ; 
+			case 6 : 
+				
+			System.out.println("Da Thoat GD HD");
+			
 				break ; 
 			}
 			}catch (Exception e) {
@@ -89,8 +111,20 @@ for (HoaDon x : dsHoaDon) {
 		System.out.println("1.Them Hoa Don    ");
 		System.out.println("2.In Hoa Don      ");
 		System.out.println("3.Xoa Hoa Don     ");
-		System.out.println("4.Tim Kiem Hoa Don");
-		System.out.println("5.Thoat GD HD     ");
+		System.out.println("4.Tim Kiem1 Hoa Don");
+		System.out.println("5.Thanh Toan    ");
+		System.out.println("6.Thoat GD HD");
 		
+	}
+	void thanhToan (String cM) {
+		QLPhong phong = new QLPhong() ; 
+		QLDichVu dv = new QLDichVu();
+		for (HoaDon x : dsHoaDon) {
+			if (x.getKhach().getChungMT().equalsIgnoreCase(cM)) {
+				double thanhTien =x.getDichVu().getGiaDV() + x.getPhong().getGiaPhong();
+				System.out.println(thanhTien);
+				
+			}
+		}
 	}
 }

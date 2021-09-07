@@ -10,20 +10,17 @@ static Scanner nhap = new Scanner (System.in);
 void themDatPhong () {
 	
 	DatPhong datPhong = null ;
-	System.out.println("nhap ma Phong ");
-	String maPhong  = nhap.nextLine();
 	System.out.println("Nhap ma Phieu Dat ");
 	String maPhieuDat = nhap.nextLine();
 	System.out.println("Nhap ngay Dat");
-	String ngayDen = nhap.nextLine();
-	System.out.println("Nhap ngay Di");
-	String ngayDi = nhap.nextLine();
-	System.out.println("Nhap ma Khach ");
+	String ngayDat = nhap.nextLine();
+	System.out.println("Nhap ma Khach");
 	String maKhach = nhap.nextLine();
-	System.out.println("Nhap ten Nhan Vien ");
-	String tenNhanV  = nhap.nextLine();
-	datPhong = new DatPhong(maPhieuDat, maPhong, maKhach, ngayDen, ngayDi, tenNhanV);
-	
+	System.out.println("Nhap maPhong ");
+	String maPhong = nhap.nextLine();
+	KhachHang khach = new KhachHang(maKhach);
+	Phong phong= new Phong(maPhong);
+	datPhong = new DatPhong(maPhieuDat, ngayDat, khach, phong);
 	
 	dsDP.add(datPhong);
 }
@@ -42,11 +39,12 @@ void xoaPhieuDatPhong (String maPhieuDat) {
 		for (DatPhong x : dsDP) {
 			if (x.getMaPhieuDatPhong().equalsIgnoreCase(maDatPhong)) {
 				System.out.println(x.toString());
+				
 			}
 		}
+		
 	}
 	
-
 
 static void menu () {
 	System.out.println("------------MenuDatPhong--------------");
@@ -55,6 +53,7 @@ static void menu () {
 	System.out.println("3.Xoa DS Dat Phong");
 	System.out.println("4.Tim Kiem Dat Phong");
 	System.out.println("5. Thoat GD Dat Phong");
+	
 	
 }
 void hienThiQLDatPhong () {
@@ -65,11 +64,9 @@ void hienThiQLDatPhong () {
 			chon =nhap.nextInt();
 			switch (chon) {
 			case 1:
-				
-				nhap.nextLine();
-					themDatPhong();
+			nhap.nextLine();	
+				themDatPhong();
 				break;
-
 			case 2 :
 				inDSDatPhong();
 				break;
@@ -85,6 +82,9 @@ void hienThiQLDatPhong () {
 				String maDatPh = nhap.nextLine();
 				timKiemDP(maDatPh);
 				break ; 
+			case 5 : 
+				System.out.println("Dang thoat GD ");
+				break;
 			}
 		} catch (Exception e) {
 			System.err.println("LOI (>**<)");

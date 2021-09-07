@@ -5,7 +5,7 @@ public class DichVu {
  private String maDV; 
  private String tenDV ; 
  private double  giaDV ;
- 
+  
  public String getMaDV() {
 	return maDV;
 }
@@ -37,7 +37,12 @@ public DichVu(String maDV, String tenDV, double giaDV  ) {
  }
 @Override
 public String toString() {
-	return "DichVu [maDV=" + maDV + ", tenDV=" + tenDV + ", giaDV=" + giaDV + "]";
+	return "DichVu [maDV=" + maDV + ", tenDV=" + tenDV + ", giaDV=" + giaDV +  "]";
 }
- 
+ DichVu (String maDV){
+	 this.maDV = maDV;
+ }
+ DichVu (String ma,double giaDV){
+	this.giaDV=giaDV;
+ }
 }

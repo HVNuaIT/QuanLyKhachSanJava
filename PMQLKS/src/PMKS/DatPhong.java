@@ -2,66 +2,54 @@ package PMKS;
 
 public class DatPhong {
 private String maPhieuDatPhong ; 
-
-private String maPhong ; 
-private String maKhach ;
-private String ngayDen ; 
-private String ngayDi ; 
-private String tenNhanVien ;
+private String ngayDat ;  
+private KhachHang khachHang ; 
+private Phong phong ;
 public String getMaPhieuDatPhong() {
 	return maPhieuDatPhong;
 }
 public void setMaPhieuDatPhong(String maPhieuDatPhong) {
 	this.maPhieuDatPhong = maPhieuDatPhong;
 }
-
-public String getMaPhong() {
-	return maPhong;
+public void setNgayDat(String ngayDat) {
+	this.ngayDat = ngayDat;
 }
-public void setMaPhong(String maPhong) {
-	this.maPhong = maPhong;
+public String getNgayDat() {
+	return ngayDat;
 }
-public String getMaKhach() {
-	return maKhach;
+public KhachHang getKhachHang() {
+	return khachHang;
 }
-public void setMaKhach(String maKhach) {
-	this.maKhach = maKhach;
+public void setKhachHang(KhachHang khachHang) {
+	this.khachHang = khachHang;
 }
-public String getNgayDen() {
-	return ngayDen;
+public Phong getPhong() {
+	return phong;
 }
-public void setNgayDen(String ngayDen) {
-	this.ngayDen = ngayDen;
+public void setPhong(Phong phong) {
+	this.phong = phong;
 }
-public String getNgayDi() {
-	return ngayDi;
-}
-public void setNgayDi(String ngayDi) {
-	this.ngayDi = ngayDi;
-}
-public String getTenNhanVien() {
-	return tenNhanVien;
-}
-public void setTenNhanVien(String tenNhanVien) {
-	this.tenNhanVien = tenNhanVien;
-}
-public DatPhong(String maPhieuDatPhong, String maPhong, String maKhach, String ngayDen,
-		String ngayDi, String tenNhanVien) {
+public DatPhong(String maPhieuDatPhong, String ngayDat,KhachHang khach , Phong phong) {
 	super();
 	this.maPhieuDatPhong = maPhieuDatPhong;
-	this.maPhong = maPhong;
-	this.maKhach = maKhach;
-	this.ngayDen = ngayDen;
-	this.ngayDi = ngayDi;
-	this.tenNhanVien = tenNhanVien;
+	this.ngayDat = ngayDat;
+	this.khachHang = khach ;  
+	this.phong = phong ; 
+	
+}
+DatPhong (){
+	
 }
 @Override
 public String toString() {
-	return "DatPhong [maPhieuDatPhong=" + maPhieuDatPhong  + ", maPhong=" + maPhong
-			+ ", maKhach=" + maKhach + ", ngayDen=" + ngayDen + ", ngayDi=" + ngayDi + ", tenNhanVien=" + tenNhanVien
-			+ "]";
-} 
+	return "DatPhong [maPhieuDatPhong=" + maPhieuDatPhong + ", ngayDat=" + ngayDat + ", maKhachHang=" + khachHang.getMaKhachHang()
+			+ ", maPhong=" + phong.getMaPhong() + "]";
+}
 
+public DatPhong(String maPhieuDat) {
+	// TODO Auto-generated constructor stub
+	this.maPhieuDatPhong=maPhieuDat;
+}
 
 
 }

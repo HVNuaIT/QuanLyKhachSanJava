@@ -4,6 +4,14 @@ public class NhanVien extends Nguoi {
 
 	private String maNV ; 
 	private String chucVu ; 
+	private TaiKhoan tk ; 
+	
+	public TaiKhoan getTk() {
+		return tk;
+	}
+	public void setTk(TaiKhoan tk) {
+		this.tk = tk;
+	}
 	public String getMaNV() {
 		return maNV;
 	}
@@ -23,7 +31,7 @@ public class NhanVien extends Nguoi {
 		this.chucVu=chucVu ; 
 	}
 	public NhanVien() {
-		// TODO Auto-generated constructor stub
+		
 		
 	}
 	@Override
